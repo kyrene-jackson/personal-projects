@@ -25,19 +25,32 @@ end
 # Create the player class
 
 class Player
+  attr_reader :name, :score, :total_guess_count, :high_number,
+  :current_guess, :current_number_of_guesses
 def initialize(name)
   @name = name
   @score = 0
   prepare_for_new_round
-end
+  end
 def prepare_for_new_round
   @total_guess_count = 0
   @high_number = 0
   @current_guess = 0
   @current_number_of_guesses = 0
-end
-
-
+  end
+def add_score(points)
+  @score += points
+  end
+def get_high_number
+  @high_number = gets.to_i
+  end
+def get_total_guess_count
+  @total_guess_count = gets.to_i
+  end
+def get_guess
+  @current_number_of_guesses += 1
+  @current_guess = gets.to_i
+  end
 end
 
 
