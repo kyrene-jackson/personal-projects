@@ -8,7 +8,18 @@
 # Create the game class
 
 class Game
-  TOTAL_ROUNDS = 3
+TOTAL_ROUNDS = 3
+def initialize(player)
+  @player = player
+  @round = 0
+  next_round
+  end
+def next_round
+  @computers_number = 0
+  @round_done = false
+  @round += 1
+  @player.prepare_for_new_round
+  end
 end
 
 # Create the player class
