@@ -8,7 +8,8 @@
 # Create the game class
 
 class Game
-TOTAL_ROUNDS = 3
+  attr_reader :round
+  TOTAL_ROUNDS = 3
 def initialize(player)
   @player = player
   @round = 0
@@ -20,6 +21,42 @@ def next_round
   @round += 1
   @player.prepare_for_new_round
   end
+def done?
+  @round > TOTAL_ROUNDS
+  end
+def round_done?
+  @round_done
+  end
+def get_high_number
+  print "I'll pick a number between 1 and what number? "
+  high_number = @player.get_high_number
+  if high_number <= 1
+    puts "Oops! The number must be larger than 1. Try again."
+    return false
+  else
+    return true
+  end
+end
+def get_guess_count
+  average = calculate_typical_number_of_guesses
+  puts "How many guesses do you think it will take?"
+  print "(average would be #{average}): "
+  total_guess_count = @player.get_total_guess_count
+  if total_guess_count < 1
+    puts "Seriously #{@player.name}?!
+    You need to at least try!"
+    return false
+  else
+    return true
+  end
+end
+def calculate_typical_number_of_guesses
+  typical_count = Math.sqrt(@player.high_number)
+  typical_count.round
+end
+def prepare_computer_number
+  @computers_number = rand(@player.high_number) + 1
+end
 end
 
 # Create the player class
