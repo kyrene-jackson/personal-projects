@@ -142,9 +142,8 @@ def guess_count
   @current_number_of_guesses
 end
 end
-
-
 #=======================================================
+# User Interface
 # Create a helpful message that will explain to the player
 # what's about to happen
 
@@ -154,23 +153,13 @@ puts "i'm thinking of in the fewest guesses."
 puts "You'll also estimate how many guesses it will take."
 puts "If you do it in fewer guesses, you'll gain bonus points!"
 
-
-
-
-
-
-#=======================================================
-# Set game variables
-
+# Set variables and create new instances of both classes
 print "What is your name? "
 name = gets.chomp
 player = Player.new(name)
 game = Game.new(player)
 
-#=======================================================
-
-# Create main game loop
-
+# Begin main game loop
 while !game.done? do
   puts " "
   puts "------> Round ##{game.round}"
