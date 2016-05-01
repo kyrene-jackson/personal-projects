@@ -14,7 +14,19 @@ end
 # Create the player class
 
 class Player
-  # insert code
+def initialize(name)
+  @name = name
+  @score = 0
+  prepare_for_new_round
+end
+def prepare_for_new_round
+  @total_guess_count = 0
+  @high_number = 0
+  @current_guess = 0
+  @current_number_of_guesses = 0
+end
+
+
 end
 
 
