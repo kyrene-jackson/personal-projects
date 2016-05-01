@@ -5,7 +5,20 @@
 # A guessing game in which the hints might not be true!
 #
 #=======================================================
+# Create the game class
 
+class Game
+  TOTAL_ROUNDS = 3
+end
+
+# Create the player class
+
+class Player
+  # insert code
+end
+
+
+#=======================================================
 # Create a helpful message that will explain to the player
 # what's about to happen
 
@@ -15,8 +28,12 @@ puts "i'm thinking of in the fewest guesses."
 puts "You'll also estimate how many guesses it will take."
 puts "If you do it in fewer guesses, you'll gain bonus points!"
 
-#=======================================================
 
+
+
+
+
+#=======================================================
 # Set game variables
 
 print "What is your name? "
@@ -41,4 +58,9 @@ while !game.done? do
         game.show_results
       end
       game.next_round
+    end
+  end
 end
+
+puts " "
+game.print_final_score
