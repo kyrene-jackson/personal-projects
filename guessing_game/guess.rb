@@ -57,13 +57,63 @@ end
 def prepare_computer_number
   @computers_number = rand(@player.high_number) + 1
 end
+def get_player_guess
+  print "#{@player.name}, what is your guess? "
+  @player.get_guess
+  compare_player_guess_to_computer_number
+end
+def compare_player_guess_to_computer_number
+  if @player.current_guess == @computers_number
+    @round_done = true
+    puts "YEAH!!! You guessed it!"
+    calculate_score
+  else
+    show_hint
+  end
+end
+def show_hint
+  hints = ["low", "high"]
+  if @player.current_guess < @computers_number
+    hint_index = 0
+  else
+    hint_index = 1
+  end
+  if !tell_truth?
+    hint_index = hint_index - 1
+    hint_index = hint_index.abs
+  end
+  puts "HINT: You are too #{hints[hint_index]}"
+end
+def tell_truth?
+  rand(100) >= 4
+end
+def calculate_score
+  score = 0
+  if @player.guess_count > @player.total_guess_count
+    score = 1
+  elsif @player.total_guess_count <
+    calculate_typical_number_of_guesses
+    score = 3
+  else
+    score = 5
+  end
+  @player.add_score(score)
+end
+def show_results
+  puts "Guess count: #{@player.guess_count}
+    target: #{@player.total_guess_count}"
+end
+def print_final_score
+  puts "Final score for #{@player.name} is
+    #{@player.score}"
+  end
 end
 
 # Create the player class
 
 class Player
   attr_reader :name, :score, :total_guess_count, :high_number,
-  :current_guess, :current_number_of_guesses
+  :current_guess
 def initialize(name)
   @name = name
   @score = 0
@@ -88,6 +138,9 @@ def get_guess
   @current_number_of_guesses += 1
   @current_guess = gets.to_i
   end
+def guess_count
+  @current_number_of_guesses
+end
 end
 
 
