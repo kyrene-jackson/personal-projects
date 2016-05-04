@@ -18,6 +18,29 @@
 # When only one player remains, the game will end and display the winner.
 
 #==========================================================================
+# CLASSES
+
+class Player
+end
+
+class Straw
+end
+
+class Game
+end
+
+
+#==========================================================================
+# GAME CODE
+
+PLAYERS = %w(Mitch Byron Andrey Dan Larry Cynthia Luna Amelia Peter Anthony)
+
+game = Game.new(PLAYERS)
+
+
+
+#==========================================================================
+# USER INTERFACE
 
 puts "Welcome to the Last Straw Game!"
 puts "In each round, players will draw straws of
@@ -26,4 +49,13 @@ puts "The players who pick the short straw will be
   eliminated and"
 puts "a new round will begin, good luck!"
 
-PLAYERS = %w(Mitch Byron Andrey Dan Larry Cynthia Luna Amelia Peter Anthony)
+# MAIN GAME LOOP
+
+while !game.done? do
+  game.show_round_number
+  game.play_round
+  game.show_results
+  game.finish_round
+end
+
+game.show_winner 
