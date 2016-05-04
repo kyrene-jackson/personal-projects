@@ -20,14 +20,45 @@
 #==========================================================================
 # CLASSES
 
-class Player
+class Straw
+  SHORT_STRAW = 5
+  LONG_STRAW = 20
+  def initialize(size)
+    @straw_size = size
+  end
 end
 
-class Straw
+
+class Player
+  def initialize(name)
+    @name = name
+  end
 end
+
+
+
 
 class Game
+  def initialize(player_names)
+  end
+  def done?
+  end
+  def show_round_number
+  end
+  def play_round
+  end
+  def show_results
+  end
+  def finish_round
+  end
+  def show_winner
+  end
 end
+
+
+
+
+
 
 
 #==========================================================================
@@ -51,11 +82,11 @@ puts "a new round will begin, good luck!"
 
 # MAIN GAME LOOP
 
-while !game.done? do
-  game.show_round_number
-  game.play_round
-  game.show_results
-  game.finish_round
-end
-
-game.show_winner 
+# while !game.done? do
+#   game.show_round_number
+#   game.play_round
+#   game.show_results
+#   game.finish_round
+# end
+#
+# game.show_winner
