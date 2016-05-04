@@ -26,6 +26,22 @@ class Straw
   def initialize(size)
     @straw_size = size
   end
+  def short?
+    @straw_size == SHORT_STRAW
+  end
+  def appearance
+    '=' * @straw_size
+  end
+  def self.create_bundle(short, long)
+    bundle = []
+    1.upto(long) do
+      bundle << Straw.new(SHORT_STRAW)
+    end
+    1.upto(long) do
+      bundle << Straw.new(LONG_STRAW)
+    end
+    bundle
+  end
 end
 
 
