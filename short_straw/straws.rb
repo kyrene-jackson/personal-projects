@@ -118,7 +118,7 @@ eliminated and a new round will begin."
 puts "The game will continue until only one player is left!"
 puts "Can you guess which player is going to win? :)"
 
-PLAYERS = %w(Mitch Byron Andrey Dan Larry Cynthia Luna Amelia Peter Anthony)
+PLAYERS = %w(Mitch Byron Andrey Chuck Larry Cynthia Luna Amelia Peter Anthony)
 
 game = Game.new(PLAYERS)
 
