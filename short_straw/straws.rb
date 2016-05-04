@@ -64,33 +64,59 @@ end
 
 class Game
   def initialize(player_names)
+    @players = []
+      player_names.each do |name|
+        @players.push(Player.new(name))
+      end
+      @rounds = 1
   end
   def done?
+    @players.length <= 1
   end
   def show_round_number
+    puts " "
+    puts "----> Round #{@rounds}"
+    puts " "
   end
   def play_round
+    bundle_of_straws = setup_new_bundle
+    0.upto(@players.length - 1) do |index|
+      player = @players[index]
+      player.straw = bundle_of_straws.pop
+    end
+  end
+  def setup_new_bundle
+    number_of_players = @players.length
+    bundle = Straw.create_bundle(1, number_of_players - 1)
+    bundle.shuffle
   end
   def show_results
+    @players.each do |player|
+      puts player.appearance
+    end
   end
   def finish_round
+    @players.delete_if do |player|
+      player.short_straw?
+    end
+    @rounds += 1
   end
   def show_winner
+    last_player = @players.first
+    puts " "
+    puts "The winner is #{last_player.name}"
+    puts " "
   end
 end
 
 
-
-
-
-
-
 #==========================================================================
-# GAME CODE
 
 PLAYERS = %w(Mitch Byron Andrey Dan Larry Cynthia Luna Amelia Peter Anthony)
 
 game = Game.new(PLAYERS)
+
+
 
 
 
