@@ -46,8 +46,16 @@ end
 
 
 class Player
+  attr_reader :name
+  attr_accessor :straw
   def initialize(name)
     @name = name
+  end
+  def appearance
+    "#{straw.appearance} #{name}"
+  end
+  def short_straw?
+    straw.short?
   end
 end
 
