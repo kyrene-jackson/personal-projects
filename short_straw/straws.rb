@@ -115,7 +115,8 @@ puts "In each round, players will draw straws of
 two different lengths."
 puts "The players who pick the short straws will be
 eliminated and a new round will begin."
-puts "The game will continue until only one player is left!"
+puts "The game will continue until only one player is left"
+puts "with a long straw!"
 puts "Can you guess which player is going to win? :)"
 
 PLAYERS = %w(Mitch Byron Andrey Chuck Larry Cynthia Luna Amelia Peter Anthony)
