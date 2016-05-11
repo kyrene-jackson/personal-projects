@@ -14,4 +14,4 @@
 <br>
 **CODE BREAKER**
 5. 
-6. Primary concept focus: Practice how to write code that is easier to understand and maintain by wrapping as much functionality into reusable classes as possible.
+6. Primary concept focus: Practice how to write code in a top-down manner, that is easier to understand and maintain by wrapping as much functionality into reusable classes as possible.
