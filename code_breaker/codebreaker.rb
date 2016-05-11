@@ -43,6 +43,7 @@ class CodeBreaker
     else
       false
     end
+  end
     def get_command
       print "Do you want to (e)ncrypt or (d)ecrypt a file? "
       @command = gets.chomp.downcase
@@ -52,7 +53,25 @@ class CodeBreaker
       end
       true
     end
+    def get_input_file
+      print "Enter the name of the input file: "
+      @input_file = gets.chomp
+      # Check to see if the file exists
+      if !File.exists?(@input_file)
+        puts "Can't find the input file, sorry!"
+        return false
+      end
+      true
   end
+  def get_output_file
+    print "Enter the name of the output file: "
+    @output_file = gets.chomp
+    if !File.exists?(@output_file)
+      puts "The output file already exists, can't overwrite"
+      return false
+    end
+    true
+  end 
 end
 
 
