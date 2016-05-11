@@ -14,10 +14,32 @@
 # will use a lookup table technique organized
 # in a hash.
 #======================================================
+# Create the CodeBreaker class
+# use empty quotes to signify no filename has been selected
+# note: ruby unlike most languages count empty strings as being 'true'
+
+class CodeBreaker
+  def initialize
+    @input_file = ''
+    @output_file = ''
+    @password = ''
+  end
+  def run
+    true
+  end 
+end
+
+
+
+
+
+
+
+
 
 # welcome message to display to user once program is opened
 puts "Code Brekaer will encrypt or decrypt a file of your choice"
-puts " "
+puts ""
 
 # new CodeBreaker class instance
 codebreaker = CodeBreaker.new
