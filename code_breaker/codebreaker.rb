@@ -25,8 +25,8 @@ class CodeBreaker
     @password = ''
   end
   def run
-    true
-  end 
+    true 
+  end
 end
 
 
