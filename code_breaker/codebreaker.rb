@@ -66,11 +66,15 @@ class CodeBreaker
   def get_output_file
     print "Enter the name of the output file: "
     @output_file = gets.chomp
-    if !File.exists?(@output_file)
+    if File.exists?(@output_file)
       puts "The output file already exists, can't overwrite"
       return false
     end
     true
+  end
+  def get_secret
+    print "Enter the secret password: "
+    @password = gets.chomp
   end 
 end
 
