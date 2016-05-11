@@ -11,3 +11,7 @@
 **SHORT STRAW**
 3. A game in which the computer uses a pre generated group of players to execute a series of straws varying in length. Each straw will be randomly assigned to each player. The player with the shortest straw each turn will be eliminated each turn. The game finishes when only one player remains. Can you guess which player is going to win?
 4. Primary concept focus: A deeper look into the Array object.
+<br>
+**CODE BREAKER**
+5. 
+6. Primary concept focus: Practice how to write code that is easier to understand and maintain by wrapping as much functionality into reusable classes as possible.
