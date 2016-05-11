@@ -1,7 +1,7 @@
 # Personal Projects
 ## Contents:
-- Guessing Game
-<a href="https://github.com/kyrene-jackson/personal-projects/blob/master/short_straw/straws.rb">- Short Straw</a>
+- <a href ="https://github.com/kyrene-jackson/personal-projects/blob/master/guessing_game/guess.rb"></a>
+- <a href="https://github.com/kyrene-jackson/personal-projects/blob/master/short_straw/straws.rb">Short Straw</a>
 - Code Breaker
 <hr>
 **GUESSING GAME**
