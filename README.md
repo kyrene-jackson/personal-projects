@@ -1,5 +1,7 @@
 # Personal Projects
+<hr>
 ## Contents:
+<hr>
 - <a href ="https://github.com/kyrene-jackson/personal-projects/blob/master/guessing_game/guess.rb">Guessing Game</a>
 - <a href="https://github.com/kyrene-jackson/personal-projects/blob/master/short_straw/straws.rb">Short Straw</a>
 - Code Breaker
