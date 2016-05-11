@@ -14,10 +14,22 @@
 # will use a lookup table technique organized
 # in a hash.
 #======================================================
+
+
+
+# Create Ceaser class
+class Ceaser
+  #code goes here
+end
+
+
+
+# declare array constant that will represent the
+# values of program commands
+COMMANDS = ['e', 'd']
 # Create the CodeBreaker class
 # use empty quotes to signify no filename has been selected
 # note: ruby unlike most languages count empty strings as being 'true'
-
 class CodeBreaker
   def initialize
     @input_file = ''
@@ -25,7 +37,21 @@ class CodeBreaker
     @password = ''
   end
   def run
-    true 
+    if get_command && get_input_file && get_output_file && get_secret
+      process_files
+      true
+    else
+      false
+    end
+    def get_command
+      print "Do you want to (e)ncrypt or (d)ecrypt a file? "
+      @command = gets.chomp.downcase
+      if !COMMANDS.include?(@command)
+        puts "Unknown command, sorry!"
+        return false
+      end
+      true
+    end
   end
 end
 
