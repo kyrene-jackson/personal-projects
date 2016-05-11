@@ -4,7 +4,7 @@
 - Short Straw 
 - Code Breaker
 <hr>
-**GUESSING GAME**
+<a href="http://en.wikipedia.org/wiki/Markdown">**GUESSING GAME**</a>
 1. A simple game in which the computer picks a number and the player must guess it using the least amount of turns as possible. But there's a twist! The computer provides you with hints that may or may not be true!<br>
 2. Primary concept focus: Exploring new ways to organize and store data and methods together in classes.
 <br>
