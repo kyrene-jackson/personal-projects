@@ -13,7 +13,7 @@
 require 'gosu'
 
 class Amazing < Gosu::Window
-def initialize
+  def initialize
     super(640, 640)
     self.caption = "Amazing"
     # more code will go here
