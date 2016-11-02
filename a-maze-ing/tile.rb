@@ -43,4 +43,65 @@ class Tile
     end
   end
 
+  def color
+    if is_player?
+      @@colors[:red]
+    elsif is_exit?
+      @@colors[:green]
+    elsif is_treasure?
+      @@colors[:gold]
+    else
+      @@colors[:blue]
+    end
+  end
+
+  def move_to(column, row)
+    @column = column
+    @row = row
+  end
+
+  def move_by(column_delta, row_delta)
+    move_to(@column + column_delta, @row + row_delta)
+  end
+
+  def is_treasure?
+    @type == TREASURE_TYPE
+  end
+
+  def is_start?
+    @type == START_TYPE
+  end
+
+  def is_exit?
+    @type == EXIT_TYPE
+  end
+
+  def is_player?
+    @type == PLAYER_TYPE
+  end
+
+  def is_empty?
+    @type == EMPTY_TYPE || @type == ' '
+  end
+
+  def hidden
+    @hidden
+  end
+
+  def hide!
+    @hidden = true
+  end
+
+  def make_empty
+    @type = EMPTY_TYPE
+  end
+
+  def tile_is_drawn?
+    !is_empty? && !is_start?
+  end
+
+  def tile_can_be_entered?
+    is_empty? || is_start? || is_treasure? || is_exit?
+  end
+
 end
