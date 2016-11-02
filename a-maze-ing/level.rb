@@ -63,10 +63,35 @@ class Level
     end
   end
 
+  def get_tile(column, row)
+    if column < 0 || column >= @total_columns || row < 0 || row >= @total_rows
+      nil
+    else
+      @tiles[row * @total_columns + column]
+    end
+  end
+
+  def move_valid?(player, column_delta, row_delta)
+    destination = get_tile(player.column + column_delta, player.row + row_delta)
+    if destination && destination.tile_can_be_entered?
+      true
+    else
+      false
+    end
+  end
+
+  def level_over?
+    @exit_reached
+  end
+
   def update
   end
 
   def draw
+    @tiles.each do |tile|
+      tile.draw
+    end
+    @player.draw
   end
 
 end
